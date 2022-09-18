@@ -1,0 +1,33 @@
+{
+  "name": "otot-b1-b2",
+  "version": "1.0.0",
+  "description": "OTOT task B1-B2 demonstrating simple RESTful API implementation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngjunkang/OTOT-B1-B2.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "json"
+  ],
+  "author": "Ng Jun Kang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngjunkang/OTOT-B1-B2/issues"
+  },
+  "homepage": "https://github.com/ngjunkang/OTOT-B1-B2#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "prettier": "2.7.1"
+  }
+}
