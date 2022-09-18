@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const apiRoutes = require("./src/api-routes");
 
@@ -14,19 +15,25 @@ app.use(
 );
 app.use(bodyParser.json());
 
+const DB_URI = process.env.DATABASE_URI || "mongodb://localhost/contacts";
+
+const DB_CONNECTION_STRING = !!process.env.DATABASE_URI
+  ? "(remote)"
+  : "(local)";
+
 // Connect to Mongoose and set connection variable
-mongoose.connect("mongodb://localhost/contacts", { useNewUrlParser: true });
+mongoose.connect(DB_URI, { useNewUrlParser: true });
 var db = mongoose.connection;
 
 // Added check for DB connection
-if (!db) console.log("Error connecting db");
-else console.log("Db connected successfully");
+if (!db) console.log("Error connecting db " + DB_CONNECTION_STRING);
+else console.log("Db connected successfully " + DB_CONNECTION_STRING);
 
 // Setup server port
 var port = process.env.PORT || 8080;
 
 // Send message for default URL
-app.get("/", (req, res) => res.send("Hello World with Express"));
+app.get("/", (_, res) => res.send("Hello World with Express"));
 
 // Use Api routes in the App
 app.use("/api", apiRoutes);
