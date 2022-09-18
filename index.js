@@ -42,7 +42,7 @@ app.use("/api", apiRoutes);
 app.use("*", (_, res) => {
   res.status(404).json({
     status: "error",
-    message: "invalid api route",
+    message: "invalid api route!",
   });
 });
 
