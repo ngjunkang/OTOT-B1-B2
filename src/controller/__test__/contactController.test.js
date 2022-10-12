@@ -28,7 +28,7 @@ afterAll(async () => {
 describe("GET requests", () => {
   test("Returns Express root route", async () => {
     const { statusCode, text } = await supertest(app).get("/");
-    expect(text).toBe("Hello World with Express");
+    expect(text).toBe("Hello World with Express (CD activated)");
     expect(statusCode).toBe(200);
   });
   test("Returns all contacts", async () => {

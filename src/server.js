@@ -13,7 +13,7 @@ exports.createExpressServer = () => {
   app.use(bodyParser.json());
 
   // Send message for default URL
-  app.get("/", (_, res) => res.send("Hello World with Express"));
+  app.get("/", (_, res) => res.send("Hello World with Express (CD activated)"));
 
   // Use Api routes in the App
   app.use("/api", apiRoutes);
