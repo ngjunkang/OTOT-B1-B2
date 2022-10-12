@@ -40,6 +40,7 @@ exports.new = (req, res) => {
       });
     }
     res.json({
+      status: "success",
       message: "New contact created!",
       data: contact,
     });
@@ -62,6 +63,7 @@ exports.view = (req, res) => {
       });
     }
     res.status(200).json({
+      status: "success",
       message: "Contact details loading..",
       data: contact,
     });
@@ -91,6 +93,7 @@ exports.update = (req, res) => {
     contact.save((err) => {
       if (err) res.json(err);
       res.status(200).json({
+        status: "success",
         message: "Contact Info updated",
         data: contact,
       });
