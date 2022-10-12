@@ -48,4 +48,4 @@ jobs:
           heroku_app_name: "contactsotot"
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
           branch: "main"
-          buildpacks: "https://github.com/heroku/heroku-buildpack-nodejs.git"
+          buildpack: "https://github.com/heroku/heroku-buildpack-nodejs.git"
