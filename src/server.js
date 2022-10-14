@@ -1,9 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const apiRoutes = require("./api-routes");
+const cors = require("cors");
 
 exports.createExpressServer = () => {
   const app = express();
+
+  app.use(cors());
+
   // Configure bodyparser to handle post requests
   app.use(
     bodyParser.urlencoded({
